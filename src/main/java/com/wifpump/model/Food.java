@@ -1,10 +1,8 @@
 package com.wifpump.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.wifpump.enums.FoodCategory;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,7 +15,8 @@ public class Food {
     @Id
     private Long food_id;
     private String name;
-    private String category;
+    @Enumerated(EnumType.STRING)
+    private FoodCategory category;
     @Column(name = "calories_per_100g")
     private Integer kcalPer100G;
     private Integer protein_per_100g;

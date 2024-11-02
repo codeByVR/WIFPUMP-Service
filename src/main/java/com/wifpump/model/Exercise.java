@@ -1,9 +1,8 @@
 package com.wifpump.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.wifpump.enums.ExerciseCategory;
+import com.wifpump.enums.MuscleGroup;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,8 +16,10 @@ public class Exercise {
     private Long exercise_id;
     private String name;
     private String description;
-    private String category;
-    private String muscle_group;
+    @Enumerated(EnumType.STRING)
+    private ExerciseCategory category;
+    @Enumerated(EnumType.STRING)
+    private MuscleGroup muscle_group;
     private boolean equipment_needed;
     private LocalDateTime created_at;
 }

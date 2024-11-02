@@ -1,10 +1,8 @@
 package com.wifpump.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.wifpump.enums.Goal;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -30,5 +28,6 @@ public class User {
     private LocalDateTime updated_at;
     private Double weight;
     private Double height;
-    private String goal;
+    @Enumerated(EnumType.STRING)
+    private Goal goal;
 }

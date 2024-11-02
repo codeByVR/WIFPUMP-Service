@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,4 +30,5 @@ public class ExerciseController {
     public Optional<Exercise> getExercisebyId(@PathVariable Long id) {
         return exerciseRepository.findById((id));
     }
+
 }
